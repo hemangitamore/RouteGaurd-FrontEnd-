@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import AdminLogin from './components/AdminLogin';
+import AdminLogin from './pages/AdminLogin';
 
 ReactDOM.render(
   <React.StrictMode>
