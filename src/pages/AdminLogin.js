@@ -1,6 +1,4 @@
-
-// src/components/AdminLogin.js
-
+// src/components/AdminLogin.jsx
 import React, { useState } from 'react';
 import axios from 'axios';
 import './AdminLogin.css';  // Import the CSS file for styling
