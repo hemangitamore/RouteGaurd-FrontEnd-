@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import AOS from 'aos';
 import "aos/dist/aos.css";
 import './index.css';
+import AdminLogin from './components/AdminLogin';
 import {
   BrowserRouter as Router,
   Routes,
@@ -40,6 +41,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/get-demo" element={<DemoProduct />} /> 
+            <Route path="/AdminLogin" element={<AdminLogin />} />
           </Routes>
         </ScrollToTop>
       </Router>
