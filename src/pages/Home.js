@@ -6,14 +6,15 @@ import Hero from '../components/Hero';
 
 import Portfolio from '../components/Portfolio';
 import Services from '../components/Services';
-import AdminLogin from '../components/AdminLogin';
+import AdminLogin from './AdminLogin';
+
 
 
 const Home = () => {
     return (
         <>
             <Hero />
-            
+            <AdminLogin/>
             <Services />
             <Portfolio />
             <Clients />
