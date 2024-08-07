@@ -1,7 +1,7 @@
 
-// src/Navbar/NavLinks.js
+//src/Navbar/NavLinks.js
 
-/*import React from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 const NavLinks = () => {
@@ -62,22 +62,7 @@ const NavLinks = () => {
   );
 };
 
-export default NavLinks;*/
+export default NavLinks;
 
 // src/components/Navbar.js
-import React from 'react';
-import { Link } from 'react-router-dom';
-
-const Navbar = () => {
-  return (
-    <nav>
-      <ul>
-        <li><Link to="/admin/login">Admin Login</Link></li>
-        {/* Add other links here */}
-      </ul>
-    </nav>
-  );
-};
-
-export default Navbar;
 
