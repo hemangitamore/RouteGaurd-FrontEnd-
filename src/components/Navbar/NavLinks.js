@@ -7,8 +7,8 @@ const NavLinks = () => {
             <HashLink className="px-4 font-extrabold text-gray-500 hover:text-blue-900" smooth to="/#about">
                 About
             </HashLink>
-            <HashLink className="px-4 font-extrabold text-gray-500 hover:text-blue-900" smooth to="/#services">
-                Services
+            <HashLink className="px-4 font-extrabold text-gray-500 hover:text-blue-900" smooth to="/#adminLogin">
+                AdminLogin
             </HashLink>
             <HashLink className="px-4 font-extrabold text-gray-500 hover:text-blue-900" to="/">
                 Portfolio
