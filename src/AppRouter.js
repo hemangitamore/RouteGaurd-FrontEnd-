@@ -3,6 +3,9 @@
 
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
+import { Dropdown } from 'react-bootstrap';
+import './Navlinks.css';
 import NavBar from './Navbar/NavBar';
 import HomePage from './components/HomePage';
 import AdminLogin from './components/AdminLogin'; // Import AdminLogin component
