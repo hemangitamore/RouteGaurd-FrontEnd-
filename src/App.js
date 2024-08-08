@@ -43,6 +43,9 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/get-demo" element={<DemoProduct />} /> 
             <Route path="/AdminLogin" element={<AdminLogin />} />
+           
+            <Route path="/customer/register" element={<CustomerRegistration />} />
+            <Route path="/driver/register" component={DriverPage} />
           </Routes>
      
       </Router>

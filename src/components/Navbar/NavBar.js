@@ -137,9 +137,7 @@ const NavLinks = () => {
         </Dropdown.Toggle>
 
         <Dropdown.Menu>
-          <Dropdown.Item as={NavLink} to="/admin/register">
-            Admin Registration
-          </Dropdown.Item>
+          
           <Dropdown.Item as={NavLink} to="/customer/register">
             Customer Registration
           </Dropdown.Item>
