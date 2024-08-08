@@ -1,6 +1,7 @@
 // src/components/AdminLogin.jsx
 import React, { useState } from 'react';
 import axios from 'axios';
+import { TextField, Button, Card, CardContent, Typography } from '@mui/material';
 import './AdminLogin.css';  // Import the CSS file for styling
 
 const AdminLogin = () => {
@@ -34,33 +35,45 @@ const AdminLogin = () => {
 
   return (
     <div className="login-container">
-      <h2>Admin Login</h2>
-      {error && <p className="error-message">{error}</p>}
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="username">Username</label>
-          <input
-            type="text"
-            id="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
-        <button type="submit" disabled={loading}>
-          {loading ? 'Logging in...' : 'Login'}
-        </button>
-      </form>
+      <Card sx={{ maxWidth: 400, margin: 'auto', padding: 2 }}>
+        <CardContent>
+          <Typography variant="h5" component="div" gutterBottom>
+            Admin Login
+          </Typography>
+          {error && <Typography color="error" variant="body2">{error}</Typography>}
+          <form onSubmit={handleSubmit}>
+            <TextField
+              fullWidth
+              margin="normal"
+              label="Username"
+              variant="outlined"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+            />
+            <TextField
+              fullWidth
+              margin="normal"
+              label="Password"
+              type="password"
+              variant="outlined"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+            <Button
+              type="submit"
+              variant="contained"
+              color="primary"
+              fullWidth
+              disabled={loading}
+              sx={{ marginTop: 2 }}
+            >
+              {loading ? 'Logging in...' : 'Login'}
+            </Button>
+          </form>
+        </CardContent>
+      </Card>
     </div>
   );
 };
