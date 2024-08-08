@@ -21,7 +21,7 @@ const Hero = () => {
                             </h1>
                             <p className="mb-5 md:text-3xl text-2xl font-semibold text-blue-700">
                                 Comprehensive Transportation Services for Every Need
-                                Our advanced logistics solutions are designed to streamline your operations and enhance efficiency.
+                               
                             </p>
                            
                             <div className="mb-4 space-x-0 md:space-x-2 md:mb-8">
