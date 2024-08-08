@@ -1,0 +1,27 @@
+/* src/components/NavLinks.css */
+.nav-links .nav-link {
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #000;
+  }
+  
+  .nav-links .nav-link:hover {
+    background-color: #f0f0f0;
+    color: #007bff;
+  }
+  
+  .nav-links .dropdown-menu {
+    background-color: #fff;
+    border: 1px solid #ccc;
+  }
+  
+  .nav-links .dropdown-item {
+    padding: 8px 16px;
+    color: #000;
+  }
+  
+  .nav-links .dropdown-item:hover {
+    background-color: #f0f0f0;
+    color: #007bff;
+  }
+  
