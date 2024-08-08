@@ -129,9 +129,9 @@ const NavLinks = () => {
       {/* Dropdown for Registration */}
       <Dropdown>
         <Dropdown.Toggle 
-          variant="primary" 
+          //variant="primary" 
           id="registration-dropdown" 
-          className="px-4 py-2 rounded-md transition-colors duration-300 text-blue-900 hover:bg-blue-100"
+          className="px-4 py-2  transition-colors duration-300 text-blue-900 hover:bg-blue-100"
         >
           Registration
         </Dropdown.Toggle>
