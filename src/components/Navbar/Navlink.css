@@ -1,5 +1,5 @@
 /* src/components/NavLinks.css */
-.nav-links .nav-link {
+/*.nav-links .nav-link {
     padding: 8px 16px;
     text-decoration: none;
     color: #000;
@@ -23,5 +23,39 @@
   .nav-links .dropdown-item:hover {
     background-color: #f0f0f0;
     color: #007bff;
+  }*/
+  /* src/Navbar/NavLinks.css */
+/* src/Navbar/NavLinks.css */
+
+/* Position the Navbar.Toggle to the right */
+.custom-navbar-toggle {
+  border: none;
+}
+
+/* Ensure Navbar content aligns to the right */
+.navbar-collapse {
+  justify-content: flex-end;
+}
+
+.navbar-nav {
+  margin-left: auto;
+}
+
+.styling{
+ 
+    font-family: 'Peralta', cursive;
+    
+}
+
+
+@media (max-width: 768px) {
+  .navbar-nav {
+    flex-direction: column;
   }
+
+  .nav-link {
+    padding: 10px 0;
+  }
+}
+
   
