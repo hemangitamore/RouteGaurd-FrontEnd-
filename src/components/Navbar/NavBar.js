@@ -70,7 +70,7 @@ export default NavLinks;
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { NavDropdown } from 'react-bootstrap';
-import './Navbar.css';
+import './Navlink.css';
 
 const NavLinks = () => {
   return (
