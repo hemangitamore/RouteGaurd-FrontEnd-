@@ -10,6 +10,7 @@ import {
 } from 'react-router-dom';
 // All pages
 import AdminLogin from './components/AdminLogin';
+import Services from './components/Services';
 import CustomerRegistration from './components/CustomerRegistration';
 import DriverRegistration from './components/DriverRegistration';
 import Home from './pages/Home';
@@ -47,6 +48,7 @@ function App() {
             <Route path="/AdminLogin" element={<AdminLogin />} />
            
             <Route path="/customer/register" element={<CustomerRegistration />} />
+            <Route path="/service" element={< Services/>} />
             <Route path="/driver/register" element={<DriverRegistration />} />
           </Routes>
      
