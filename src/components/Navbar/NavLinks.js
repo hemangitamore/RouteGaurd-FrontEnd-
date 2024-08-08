@@ -1,6 +1,9 @@
 import React from 'react';
 import { HashLink } from 'react-router-hash-link';
 
+import { Dropdown } from 'react-bootstrap';
+import './Navlinks.css'; // Ensure the CSS file is correctly referenced
+
 const NavLinks = () => {
     return (
         <>
