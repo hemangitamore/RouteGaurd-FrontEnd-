@@ -49,7 +49,7 @@ const NavLinks = () => {
         Contact
       </NavLink>
       <NavLink
-        to="/admin-login"
+        to="/AdminLogin"
         className={({ isActive }) =>
           `px-4 py-2 rounded-md transition-colors duration-300 ${
             isActive ? 'bg-blue-700 text-white' : 'text-blue-900 hover:bg-blue-100'

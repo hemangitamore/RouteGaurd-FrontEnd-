@@ -6,7 +6,7 @@ import Hero from '../components/Hero';
 
 import Portfolio from '../components/Portfolio';
 import Services from '../components/Services';
-import AdminLogin from './AdminLogin';
+import AdminLogin from '../components/AdminLogin';
 
 
 

@@ -9,7 +9,7 @@ import {
   Route
 } from 'react-router-dom';
 // All pages
-import AdminLogin from './pages/AdminLogin';
+import AdminLogin from './components/AdminLogin';
 import Home from './pages/Home';
 import Contact from './pages/Contact';
 import DemoProduct from './pages/DemoProduct';
