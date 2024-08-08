@@ -10,6 +10,7 @@ import {
 } from 'react-router-dom';
 // All pages
 import AdminLogin from './components/AdminLogin';
+import CustomerRegistration from './components/CustomerRegistration';
 import Home from './pages/Home';
 import Contact from './pages/Contact';
 import DemoProduct from './pages/DemoProduct';
@@ -45,7 +46,7 @@ function App() {
             <Route path="/AdminLogin" element={<AdminLogin />} />
            
             <Route path="/customer/register" element={<CustomerRegistration />} />
-            <Route path="/driver/register" component={DriverPage} />
+           
           </Routes>
      
       </Router>

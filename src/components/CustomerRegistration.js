@@ -4,7 +4,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { TextField, Button, Container, Typography, MenuItem, FormControl, InputLabel, Select } from '@mui/material';
-import './CustomerRegistration.css'; // Ensure the CSS file is correctly referenced
+
 
 const CustomerRegistration = () => {
   const [customerDetails, setCustomerDetails] = useState({
