@@ -2,8 +2,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import NavBar from '../components/Navbar/NavBar';
-import heroImg from '../images/web-dev.svg';
-//import heroImg from '../images/La';
+//import heroImg from '../images/web-dev.svg';
+import heroImg from '../images/LandingPage.jpg';
 
 const Hero = () => {
     return (
