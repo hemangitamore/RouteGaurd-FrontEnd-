@@ -19,6 +19,17 @@ const NavLinks = () => {
             <HashLink className="text-white bg-blue-900 hover:bg-blue-800 inline-flex items-center justify-center w-auto px-6 py-3 shadow-xl rounded-xl" smooth to="/get-demo#demo">
                 Demo our products
             </HashLink>
+
+            <Dropdown>
+                <Dropdown.Toggle variant="primary" id="dropdown-basic">
+                    Registration
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                    <Dropdown.Item as={HashLink} smooth to="/admin/register">Admin Registration</Dropdown.Item>
+                    <Dropdown.Item as={HashLink} smooth to="/customer/register">Customer Registration</Dropdown.Item>
+                    <Dropdown.Item as={HashLink} smooth to="/driver/register">Driver Registration</Dropdown.Item>
+                </Dropdown.Menu>
+            </Dropdown>
         </>
     )
 }
