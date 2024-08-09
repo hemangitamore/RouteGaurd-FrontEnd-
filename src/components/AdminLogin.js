@@ -34,7 +34,7 @@ const AdminLogin = () => {
   };
 
   return (
-    <div className="login-container">
+    <div className="login-container" data-aos="zoom-in-down">
       <Card sx={{ maxWidth: 400, margin: 'auto', padding: 2 }}>
         <CardContent>
           <Typography variant="h5" component="div" gutterBottom>

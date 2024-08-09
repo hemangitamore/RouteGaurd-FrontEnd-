@@ -28,7 +28,7 @@ const DriverRegistration = () => {
   };
 
   return (
-    <div className="registration-card">
+    <div className="registration-card" data-aos="zoom-in-down">
       <Card sx={{ maxWidth: 600, margin: 'auto', padding: 2 }}>
         <CardContent>
           <h2>Driver Registration</h2>

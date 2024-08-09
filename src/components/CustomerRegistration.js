@@ -73,7 +73,7 @@ const CustomerRegistration = () => {
   };
 
   return (
-    <Container maxWidth="sm" className="registration-container">
+    <Container maxWidth="sm" className="registration-container" data-aos="zoom-in-down">
       <Card sx={{ padding: 2 }}>
         <CardContent>
           <Typography variant="h4" gutterBottom>
