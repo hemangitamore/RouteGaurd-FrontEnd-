@@ -16,7 +16,7 @@ import DriverRegistration from './components/DriverRegistration';
 import Home from './pages/Home';
 import Contact from './pages/Contact';
 import DemoProduct from './pages/DemoProduct';
-
+import DriverDetails from './pages/DriverDetails'; 
 import {useDocTitle} from './components/CustomHook';
 import ScrollToTop from './components/ScrollToTop';
 
@@ -45,6 +45,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/get-demo" element={<DemoProduct />} /> 
+            <Route path="/driver-details" element={<DriverDetails/>} /> 
             <Route path="/AdminLogin" element={<AdminLogin />} />
            
             <Route path="/customer/register" element={<CustomerRegistration />} />
