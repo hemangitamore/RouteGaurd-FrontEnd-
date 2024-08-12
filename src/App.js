@@ -10,15 +10,22 @@ import {
 } from 'react-router-dom';
 // All pages
 import AdminLogin from './components/AdminLogin';
+import SuperAdmin from './components/SuperAdmin';
+
 import Services from './components/Services';
 import CustomerRegistration from './components/CustomerRegistration';
 import DriverRegistration from './components/DriverRegistration';
 import Home from './pages/Home';
 import Contact from './pages/Contact';
 import DemoProduct from './pages/DemoProduct';
+import CustomerDetails from './pages/CustomerDetails';
 
 import {useDocTitle} from './components/CustomHook';
 import ScrollToTop from './components/ScrollToTop';
+import AdminDashBoard from './pages/AdminDashBoard';
+import VehiclesDashBoard from './pages/VehiclesDashBoard';
+import TripDashBoard from './pages/TripDashBoard';
+import TripForm from './pages/TripForm';
 
 function App() {
   useEffect(() => {
@@ -46,10 +53,17 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/get-demo" element={<DemoProduct />} /> 
             <Route path="/AdminLogin" element={<AdminLogin />} />
-           
+            <Route path="/SuperAdmin" element={<SuperAdmin/>} />
+            <Route path="/AdminDashBoard" element={<AdminDashBoard/>} />
+            <Route path="/VehiclesDashBoard" element={<VehiclesDashBoard />} />
+            <Route path="/TripDashBoard" element={<TripDashBoard />} />
+            <Route path="/CustomerDetails" element={<CustomerDetails/>} />
             <Route path="/customer/register" element={<CustomerRegistration />} />
             <Route path="/service" element={< Services/>} />
             <Route path="/driver/register" element={<DriverRegistration />} />
+            <Route path="/superAdmin/login" element={<SuperAdmin />} />
+            <Route path="/admin/login" element={<AdminLogin />} />
+            
           </Routes>
      
       </Router>

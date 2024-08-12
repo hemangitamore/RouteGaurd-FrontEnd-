@@ -2,13 +2,15 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { TextField, Button, Card, CardContent, Typography } from '@mui/material';
-import './AdminLogin.css';  // Import the CSS file for styling
+import { useNavigate } from 'react-router-dom';
+import './AdminLogin.css';
 
 const AdminLogin = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -16,15 +18,11 @@ const AdminLogin = () => {
     setError('');
 
     try {
-      const response = await axios.post('/api/admin/login', {
-        username,
-        password,
-      });
+      const response = await axios.post('/api/admin/login', { username, password });
 
       if (response.status === 200) {
-        // Redirect to admin dashboard or handle successful login
-        console.log('Login successful');
-        // For example: window.location.href = '/admin/dashboard';
+        // Redirect to admin dashboard
+        navigate('/admin/dashboard');
       }
     } catch (error) {
       setError('Invalid username or password');

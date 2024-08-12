@@ -174,12 +174,21 @@ const NavLinks = () => {
           <Nav.Link as={NavLink} to="/service" activeClassName="active">
             Services
           </Nav.Link>
+         
           <Nav.Link as={NavLink} to="/contact" activeClassName="active">
             Contact
           </Nav.Link>
-          <Nav.Link as={NavLink} to="/AdminLogin" activeClassName="active">
-            Admin Login
-          </Nav.Link>
+          
+          <NavDropdown title="Login" id="Login-dropdown">
+            <NavDropdown.Item as={NavLink} to="/superAdmin/login">
+              SuperAdminLogin
+            </NavDropdown.Item>
+            <NavDropdown.Item as={NavLink} to="/Admin/login">
+              AdminLogin
+            </NavDropdown.Item>
+          </NavDropdown>
+
+          
 
           <NavDropdown title="Registration" id="registration-dropdown">
             <NavDropdown.Item as={NavLink} to="/customer/register">

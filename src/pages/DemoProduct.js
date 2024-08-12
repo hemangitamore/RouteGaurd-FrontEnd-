@@ -130,7 +130,7 @@ const DemoProduct = (props) => {
                                     className="bg-gray-50 border-gray-300 focus:ring-3 focus:ring-blue-300 h-4 w-4 rounded" 
                                     value="business_management_system" onChange={handleChange}
                                  />
-                                <label htmlFor="checkbox-1" className="ml-3 text-lg font-medium text-gray-900">Business Management System</label>
+                                <label htmlFor="checkbox-1" className="ml-3 text-lg font-medium text-gray-900"> System</label>
                             </div>
                             <div className="flex items-center my-4">
                                 <input 
@@ -140,7 +140,7 @@ const DemoProduct = (props) => {
                                     className="bg-gray-50 border-gray-300 focus:ring-3 focus:ring-blue-300 h-4 w-4 rounded"
                                     value="school_management_portal" onChange={handleChange}
                                     />
-                                <label htmlFor="checkbox-1" className="ml-3 text-lg font-medium text-gray-900">School Management Portal</label>
+                                <label htmlFor="checkbox-1" className="ml-3 text-lg font-medium text-gray-900">Vehicles Details</label>
                             </div>
                             <div className="flex items-center my-4">
                                 <input 
@@ -150,7 +150,7 @@ const DemoProduct = (props) => {
                                     className="bg-gray-50 border-gray-300 focus:ring-3 focus:ring-blue-300 h-4 w-4 rounded" 
                                     value="payroll_management_system" onChange={handleChange}
                                 />
-                                <label htmlFor="checkbox-1" className="ml-3 text-lg font-medium text-gray-900">Payroll Management System</label>
+                                <label htmlFor="checkbox-1" className="ml-3 text-lg font-medium text-gray-900">TripDashBoard</label>
                             </div>
                             <div className="flex items-center my-4">
                                 <input 
