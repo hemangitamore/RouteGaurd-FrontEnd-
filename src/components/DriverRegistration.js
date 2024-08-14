@@ -1,94 +1,144 @@
-
-// src/components/DriverRegistration.jsx
-
 import React, { useState } from 'react';
-import { Card, CardContent, CardActions, TextField, Button, MenuItem, Select, InputLabel, FormControl } from '@mui/material';
+import axios from 'axios';
 
-const DriverRegistration = () => {
-  const [formData, setFormData] = useState({
-    driverName: '',
-    licenseNumber: '',
-    tripDetails: '',
-    vehicleType: '',
-    vehicleNumber: ''
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
+const DriverRegistrationForm = () => {
+    const [formData, setFormData] = useState({
+        phoneNumber: '',
+        adharNumber: '',
+        panNumber: '',
+        driverName: '',
+        dob: '',
+        address: '',
+        nationality: '',
+        createdBy: '',
+        createdAt: '',
+        modifiedBy: '',
+        modifiedAt: '',
     });
-  };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission, e.g., send data to backend
-    console.log('Form Data:', formData);
-  };
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prevData) => ({
+            ...prevData,
+            [name]: value,
+        }));
+    };
 
-  return (
-    <div className="registration-card" data-aos="zoom-in-down">
-      <Card sx={{ maxWidth: 600, margin: 'auto', padding: 2 }}>
-        <CardContent>
-          <h2>Driver Registration</h2>
-          <form onSubmit={handleSubmit}>
-            <TextField
-              label="Driver Name"
-              name="driverName"
-              value={formData.driverName}
-              onChange={handleChange}
-              fullWidth
-              margin="normal"
-            />
-            <TextField
-              label="License Number"
-              name="licenseNumber"
-              value={formData.licenseNumber}
-              onChange={handleChange}
-              fullWidth
-              margin="normal"
-            />
-            <TextField
-              label="Trip Details"
-              name="tripDetails"
-              value={formData.tripDetails}
-              onChange={handleChange}
-              fullWidth
-              margin="normal"
-            />
-            <FormControl fullWidth margin="normal">
-              <InputLabel>Vehicle Type</InputLabel>
-              <Select
-                name="vehicleType"
-                value={formData.vehicleType}
-                onChange={handleChange}
-                label="Vehicle Type"
-              >
-                <MenuItem value="Car">Car</MenuItem>
-                <MenuItem value="Truck">Truck</MenuItem>
-                <MenuItem value="Van">Van</MenuItem>
-                {/* Add more options as needed */}
-              </Select>
-            </FormControl>
-            <TextField
-              label="Vehicle Number"
-              name="vehicleNumber"
-              value={formData.vehicleNumber}
-              onChange={handleChange}
-              fullWidth
-              margin="normal"
-            />
-          </form>
-        </CardContent>
-        <CardActions>
-          <Button type="submit" variant="contained" color="primary" onClick={handleSubmit}>
-            Register
-          </Button>
-        </CardActions>
-      </Card>
-    </div>
-  );
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // Set the current date and time for createdAt and modifiedAt
+        const currentDateTime = new Date().toISOString();
+        const dataToSubmit = {
+            ...formData,
+            createdAt: currentDateTime,
+            modifiedAt: currentDateTime,
+        };
+        
+        axios.post('YOUR_API_ENDPOINT/driver_master', dataToSubmit)
+            .then(response => {
+                console.log(response.data);
+                // Handle successful registration (e.g., display a success message or redirect)
+            })
+            .catch(error => {
+                console.error('There was an error registering the driver!', error);
+            });
+    };
+
+    return (
+        <form onSubmit={handleSubmit}>
+            <div>
+                <label>Phone Number:</label>
+                <input 
+                    type="text" 
+                    name="phoneNumber" 
+                    value={formData.phoneNumber} 
+                    onChange={handleChange} 
+                    required 
+                />
+            </div>
+            <div>
+                <label>Aadhaar Number:</label>
+                <input 
+                    type="text" 
+                    name="adharNumber" 
+                    value={formData.adharNumber} 
+                    onChange={handleChange} 
+                    required 
+                />
+            </div>
+            <div>
+                <label>PAN Number:</label>
+                <input 
+                    type="text" 
+                    name="panNumber" 
+                    value={formData.panNumber} 
+                    onChange={handleChange} 
+                    required 
+                />
+            </div>
+            <div>
+                <label>Driver Name:</label>
+                <input 
+                    type="text" 
+                    name="driverName" 
+                    value={formData.driverName} 
+                    onChange={handleChange} 
+                    required 
+                />
+            </div>
+            <div>
+                <label>Date of Birth:</label>
+                <input 
+                    type="date" 
+                    name="dob" 
+                    value={formData.dob} 
+                    onChange={handleChange} 
+                    required 
+                />
+            </div>
+            <div>
+                <label>Address:</label>
+                <input 
+                    type="text" 
+                    name="address" 
+                    value={formData.address} 
+                    onChange={handleChange} 
+                    required 
+                />
+            </div>
+            <div>
+                <label>Nationality:</label>
+                <input 
+                    type="text" 
+                    name="nationality" 
+                    value={formData.nationality} 
+                    onChange={handleChange} 
+                    required 
+                />
+            </div>
+            <div>
+                <label>Created By:</label>
+                <input 
+                    type="text" 
+                    name="createdBy" 
+                    value={formData.createdBy} 
+                    onChange={handleChange} 
+                    required 
+                />
+            </div>
+            <div>
+                <label>Modified By:</label>
+                <input 
+                    type="text" 
+                    name="modifiedBy" 
+                    value={formData.modifiedBy} 
+                    onChange={handleChange} 
+                    required 
+                />
+            </div>
+            <button type="submit">Register Driver</button>
+        </form>
+    );
 };
 
-export default DriverRegistration;
+export default DriverRegistrationForm;
