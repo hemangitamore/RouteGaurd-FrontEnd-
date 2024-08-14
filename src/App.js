@@ -18,18 +18,12 @@ import DriverRegistration from './components/DriverRegistration';
 import Home from './pages/Home';
 import Contact from './pages/Contact';
 import DemoProduct from './pages/DemoProduct';
-<<<<<<< HEAD
-import CustomerDetails from './pages/CustomerDetails';
-
-import DriverDetails from './pages/DriverDetails'; 
-=======
 
 import CustomerDetails from './pages/CustomerDetails';
 
 
 import DriverDetails from './pages/DriverDetails'; 
 
->>>>>>> 6df12249417916263aefff6c1a22fe163c21fd51
 import {useDocTitle} from './components/CustomHook';
 import ScrollToTop from './components/ScrollToTop';
 import AdminDashBoard from './pages/AdminDashBoard';
