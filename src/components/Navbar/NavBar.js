@@ -194,7 +194,7 @@ const NavLinks = () => {
             <NavDropdown.Item as={NavLink} to="/customer/register">
               Customer Registration
             </NavDropdown.Item>
-            <NavDropdown.Item as={NavLink} to="/driver/register">
+            <NavDropdown.Item as={NavLink} to="/drivers/register">
               Driver Registration
             </NavDropdown.Item>
           </NavDropdown>
