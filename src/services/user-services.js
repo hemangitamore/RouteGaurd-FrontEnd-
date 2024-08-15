@@ -10,6 +10,46 @@ export const registerDriver = (driverData) => {
         });
 };
 
+// Define the service function for customer registration
+export const registerCustomer = (customerData) => {
+    return myaxios.post('/customers/customerRegister', customerData) // Corrected the path
+        .then(response => response.data)
+        .catch(error => {
+            console.error('Error registering customer:', error);
+            throw error;
+        });
+};
+
+// Define the service function for adding a driver
+export const addDriver = (driverData) => {
+    return myaxios.post('/drivers/register', driverData) // Corrected the path
+        .then(response => response.data)
+        .catch(error => {
+            console.error('Error adding driver:', error);
+            throw error;
+        });
+};
+
+// Add a new vehicle
+export const addVehicle = (vehicleData) => {
+    return myaxios.post('/vehicles/addvehicle', vehicleData)
+        .then(response => response.data)
+        .catch(error => {
+            console.error('Error adding vehicle:', error);
+            throw error;
+        });
+};
+
+// Function to get all customers
+export const addCustomers = async () => {
+    try {
+      const response = await myaxios.get('/customers');
+      return response.data;
+    } catch (error) {
+      console.error('Error fetching customer data:', error);
+      throw error;
+    }
+  };
 
 
 
