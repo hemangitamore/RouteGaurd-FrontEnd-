@@ -2,7 +2,7 @@ import { myaxios } from "./helper";
 
 // Define the service function for driver registration
 export const registerDriver = (driverData) => {
-    return myaxios.post("/drivers/register", driverData) // Corrected the path
+    return myaxios.post("/registerDrivers/register", driverData) // Corrected the path
         .then(response => response.data)
         .catch(error => {
             console.error('Error registering driver:', error);
@@ -12,7 +12,7 @@ export const registerDriver = (driverData) => {
 
 // Define the service function for customer registration
 export const registerCustomer = (customerData) => {
-    return myaxios.post('/customers/customerRegister', customerData) // Corrected the path
+    return myaxios.post('/registerCustomers/register', customerData) // Corrected the path
         .then(response => response.data)
         .catch(error => {
             console.error('Error registering customer:', error);
@@ -51,9 +51,25 @@ export const addCustomers = async () => {
     }
   };
 
+  export const getAllCustomers = async () => {
+    try {
+      const response = await axios.get('/customers');
+      return response.data;
+    } catch (error) {
+      console.error('Error fetching customers:', error);
+      throw error; // Re-throw the error so it can be handled in the component
+    }
+  };
 
-
-
+  export const getAllDrivers = async () => {
+    try {
+      const response = await axios.get('/drivers');
+      return response.data;
+    } catch (error) {
+      console.error('Error fetching drivers:', error);
+      throw error;
+    }
+  };
 
 // import { myaxios } from "./helper";
 

@@ -69,3 +69,13 @@ export const addCustomers = async () => {
       throw error;
     }
   };
+
+  export const getAllCustomers = async () => {
+    try {
+      const response = await axios.get('/customers');
+      return response.data;
+    } catch (error) {
+      console.error('Error fetching customers:', error);
+      throw error; // Re-throw the error so it can be handled in the component
+    }
+  };
