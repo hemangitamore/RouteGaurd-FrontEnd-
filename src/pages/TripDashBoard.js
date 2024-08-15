@@ -50,7 +50,7 @@ const TripDashBoard = () => {
     e.preventDefault();
     if (editMode) {
       // Update trip
-      axios.put(`/api/trips/${trip.id}`, trip)
+      axios.put(/api/trips/${trip.id}, trip)
         .then(response => {
           setTrips(trips.map(t => (t.id === trip.id ? response.data : t)));
           setEditMode(false);
@@ -74,7 +74,7 @@ const TripDashBoard = () => {
   };
 
   const handleDelete = (id) => {
-    axios.delete(`/api/trips/${id}`)
+    axios.delete(/api/trips/${id})
       .then(() => setTrips(trips.filter(t => t.id !== id)))
       .catch(error => console.error('Error deleting trip:', error));
   };

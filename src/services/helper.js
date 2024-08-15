@@ -62,7 +62,7 @@ export const addVehicle = (vehicleData) => {
 // Function to get all customers
 export const addCustomers = async () => {
     try {
-      const response = await myaxios.get('/customers/customerRegister');
+      const response = await myaxios.post('/customers/customerRegister');
       return response.data;
     } catch (error) {
       console.error('Error fetching customer data:', error);
@@ -79,3 +79,25 @@ export const addCustomers = async () => {
       throw error; // Re-throw the error so it can be handled in the component
     }
   };
+
+  export const addTrip = async (tripData) => {
+    try {
+      const response = await myaxios.post('/trips/addTrip', tripData);
+      return response.data;
+    } catch (error) {
+      console.error('Error adding trip:', error);
+      throw error;
+    }
+  };
+
+  export const getTrips = async () => {
+    try {
+      const response = await myaxios.get('/trips/getTrips');
+      return response.data;
+    } catch (error) {
+      console.error('Error fetching trips:', error);
+      throw error;
+    }
+  };
+  
+  
