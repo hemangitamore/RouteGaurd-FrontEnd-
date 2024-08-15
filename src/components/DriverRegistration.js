@@ -1,5 +1,6 @@
+
 import React, { useState } from 'react';
-import axios from 'axios';
+import { registerDriver } from '../services/user-services'; // Import the service function
 
 function DriverRegistration() {
     const [driverData, setDriverData] = useState({
@@ -25,11 +26,24 @@ function DriverRegistration() {
         e.preventDefault();
 
         try {
-            const response = await axios.post('http://localhost:8080/api/drivers/register', driverData);
-            console.log('Driver registered successfully:', response.data);
-            // You can reset the form or navigate to another page upon success
+            const data = await registerDriver(driverData); // Call the service function
+            console.log('Driver registered successfully:', data);
+            alert('Driver registered successfully!');
+            // Optionally reset the form
+            setDriverData({
+                phoneNumber: '',
+                adharNumber: '',
+                panNumber: '',
+                driverName: '',
+                dob: '',
+                address: '',
+                nationality: '',
+                createdBy: 'admin',
+                modifiedBy: 'admin',
+            });
         } catch (error) {
             console.error('There was an error registering the driver:', error);
+            alert('There was an error registering the driver. Please try again.');
         }
     };
 

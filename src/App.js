@@ -65,7 +65,7 @@ function App() {
             <Route path="/CustomerDetails" element={<CustomerDetails/>} />
             <Route path="/customer/register" element={<CustomerRegistration />} />
             <Route path="/service" element={< Services/>} />
-            <Route path="/driver/register" element={<DriverRegistration />} />
+            <Route exact={true} path="/driver/register" element={<DriverRegistration />} />
             <Route path="/superAdmin/login" element={<SuperAdmin />} />
             <Route path="/admin/login" element={<AdminLogin />} />
             

@@ -83,6 +83,43 @@
     background-color: #0056b3;
 }
 
+/* DriverDetails.css */
+
+.actions {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.actions button {
+    padding: 5px 10px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+/* Edit Button */
+.actions button:first-child {
+    background-color: #4CAF50; /* Green */
+}
+
+.actions button:first-child:hover {
+    background-color: #45a049;
+}
+
+/* Delete Button */
+.actions button:last-child {
+    background-color: #f44336; /* Red */
+}
+
+.actions button:last-child:hover {
+    background-color: #d32f2f;
+}
+
 
 
 
