@@ -43,7 +43,7 @@ export const addVehicle = (vehicleData) => {
 // Function to get all customers
 export const addCustomers = async () => {
     try {
-      const response = await myaxios.get('/customers');
+      const response = await myaxios.get('/customers/addCustomer');
       return response.data;
     } catch (error) {
       console.error('Error fetching customer data:', error);
@@ -53,7 +53,7 @@ export const addCustomers = async () => {
 
   export const getAllCustomers = async () => {
     try {
-      const response = await axios.get('/customers');
+      const response = await myaxios.get('/customers/getCustomer');
       return response.data;
     } catch (error) {
       console.error('Error fetching customers:', error);
@@ -63,7 +63,7 @@ export const addCustomers = async () => {
 
   export const getAllDrivers = async () => {
     try {
-      const response = await axios.get('/drivers');
+      const response = await myaxios.get('/drivers/getDrivers');
       return response.data;
     } catch (error) {
       console.error('Error fetching drivers:', error);
