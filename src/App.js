@@ -59,7 +59,7 @@ function App() {
             <Route path="/driver-details" element={<DriverDetails/>} /> 
             <Route path="/AdminLogin" element={<AdminLogin />} />
             <Route path="/SuperAdmin" element={<SuperAdmin/>} />
-            <Route path="/superAdminLogin" element={<SuperAdminLogin/>} />
+            
             
             <Route path="/AdminDashBoard" element={<AdminDashBoard/>} />
             <Route path="/VehiclesDashBoard" element={<VehiclesDashBoard />} />
