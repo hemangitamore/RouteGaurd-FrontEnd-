@@ -10,6 +10,7 @@ import {
 // All pages
 import AdminLogin from './components/AdminLogin';
 import SuperAdmin from './components/SuperAdmin';
+import SuperAdminLogin from './pages/superAdminLogin';
 
 import Services from './components/Services';
 import CustomerRegistration from './components/CustomerRegistration';
@@ -58,6 +59,8 @@ function App() {
             <Route path="/driver-details" element={<DriverDetails/>} /> 
             <Route path="/AdminLogin" element={<AdminLogin />} />
             <Route path="/SuperAdmin" element={<SuperAdmin/>} />
+            <Route path="/superAdminLogin" element={<SuperAdminLogin/>} />
+            
             <Route path="/AdminDashBoard" element={<AdminDashBoard/>} />
             <Route path="/VehiclesDashBoard" element={<VehiclesDashBoard />} />
             <Route path="/TripDashBoard" element={<TripDashBoard />} />

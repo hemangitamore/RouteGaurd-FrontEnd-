@@ -23,6 +23,7 @@ const Home = () => {
            
             <Portfolio />
             <Clients />
+            <superAdminLogin/>
             <Cta/>
             <Footer />
         </>
