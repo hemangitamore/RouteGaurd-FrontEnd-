@@ -91,7 +91,7 @@ export const addCustomers = (addCustomers) => {
   // };
 
   export const addTrip = (trip) => {
-    return axios.post('/api/trips', trip)
+    return  myaxios.post('/trips', trip)
       .then(response => response.data)
       .catch(error => {
         console.error('Error creating trip:', error);
@@ -100,20 +100,40 @@ export const addCustomers = (addCustomers) => {
   };
 
   export const getAllTrips = () => {
-    return axios.get('/api/trips')
+    return  myaxios.get('/trips')
       .then(response => response.data)
       .catch(error => {
         console.error('Error fetching trips:', error);
         throw error;
       });
   };
+
+  export const deleteTrip = (tripId) => {
+    return myaxios.delete(`/trips/${tripId}`)
+      .then(response => response.data)
+      .catch(error => {
+        console.error('Error deleting trip:', error);
+        throw error;
+      });
+  };
+
+  export const updateTrip = (tripId, tripData) => {
+    return myaxios.put(`/trips/${tripId}`, tripData)
+      .then(response => response.data)
+      .catch(error => {
+        console.error('Error updating trip:', error);
+        throw error;
+      });
+  };
+  
   
   export const getAllVehicles = () => {
-    return axios.get('/api/vehicles')
+    return  myaxios.get('/api/vehicles')
       .then(response => response.data)
       .catch(error => {
         console.error('Error fetching vehicles:', error);
         throw error;
       });
   };
+  
   
