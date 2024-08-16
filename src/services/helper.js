@@ -62,7 +62,7 @@ export const addVehicle = (vehicleData) => {
 // Function to get all customers
 export const addCustomers = async () => {
     try {
-      const response = await myaxios.get('/customers/customerRegister');
+      const response = await myaxios.post('/customers/customerRegister');
       return response.data;
     } catch (error) {
       console.error('Error fetching customer data:', error);
@@ -72,10 +72,67 @@ export const addCustomers = async () => {
 
   export const getAllCustomers = async () => {
     try {
-      const response = await axios.get('/customers');
+      const response = await myaxios.get('/customers');
       return response.data;
     } catch (error) {
       console.error('Error fetching customers:', error);
       throw error; // Re-throw the error so it can be handled in the component
     }
   };
+
+  export const addTrip = async (tripData) => {
+    try {
+      const response = await myaxios.post('/trips', tripData);
+      return response.data;
+    } catch (error) {
+      console.error('Error adding trip:', error);
+      throw error;
+    }
+  };
+
+
+// Update an existing trip
+export const updateTrip = async (tripId, tripData) => {
+  try {
+    const response = await myaxios.put(`/trips/${tripId}`, tripId);
+    return response.data;
+  } catch (error) {
+    console.error('Error updating trip:', error);
+    throw error;
+  }
+};
+
+// Delete a trip
+export const deleteTrip = async (tripId) => {
+  try {
+    await myaxios.delete(`/trips/${tripId}`);
+  } catch (error) {
+    console.error('Error deleting trip:', error);
+    throw error;
+  }
+};
+
+  export const getAllTrips = async () => {
+    try {
+      const response = await myaxios.get('/trips');
+      return response.data;
+    } catch (error) {
+      console.error('Error fetching trips:', error);
+      throw error;
+    }
+  };
+  
+  export const formatDateTime = (dateTime) => {
+    // Implementation to format date and time
+    return new Date(dateTime).toLocaleString();
+  };
+  
+  export const mapTripDataForGrid = (trips) => {
+    // Implementation to map trip data for AG Grid
+    return trips.map(trip => ({
+      ...trip,
+      driverName: trip.driver ? trip.driver.name : '',
+      vehicleModel: trip.vehicle ? trip.vehicle.model : '',
+    }));
+  };
+  

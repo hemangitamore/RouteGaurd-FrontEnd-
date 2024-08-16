@@ -41,52 +41,99 @@ export const addVehicle = (vehicleData) => {
 };
 
 // Function to get all customers
-export const addCustomers = async () => {
-    try {
-      const response = await myaxios.get('/customers/addCustomer');
-      return response.data;
-    } catch (error) {
+export const addCustomers = (addCustomers) => {
+      return myaxios.post('/customers/addCustomer',addCustomers )
+      .then(response => response.data)
+      .catch (error => {
       console.error('Error fetching customer data:', error);
       throw error;
-    }
+    });
   };
 
-  export const getAllCustomers = async () => {
-    try {
-      const response = await myaxios.get('/customers/getCustomer');
-      return response.data;
-    } catch (error) {
-      console.error('Error fetching customers:', error);
-      throw error; // Re-throw the error so it can be handled in the component
-    }
+  export const getAllCustomers = () => {
+    return myaxios.get('/customers/getCustomer')
+      .then(response => response.data)
+      .catch(error => {
+        console.error('Error fetching customers:', error);
+        throw error;
+      });
+  };
+  
+
+  // export const getAllCustomers = async () => {
+  //   try {
+  //     const response = await myaxios.get('/customers/getCustomer');
+  //     return response.data;
+  //   } catch (error) {
+  //     console.error('Error fetching customers:', error);
+  //     throw error; // Re-throw the error so it can be handled in the component
+  //   }
+  // };
+
+  export const getAllDrivers = () => {
+    return myaxios.get('/drivers/getDrivers')
+      .then(response => response.data)
+      .catch(error => {
+        console.error('Error fetching drivers:', error);
+        throw error;
+      });
+  };
+  
+
+  // export const getAllDrivers = async () => {
+  //   try {
+  //     const response = await myaxios.get('/drivers/getDrivers');
+  //     return response.data;
+  //   } catch (error) {
+  //     console.error('Error fetching drivers:', error);
+  //     throw error;
+  //   }
+  // };
+
+  export const addTrip = (trip) => {
+    return  myaxios.post('/trips', trip)
+      .then(response => response.data)
+      .catch(error => {
+        console.error('Error creating trip:', error);
+        throw error;
+      });
   };
 
-  export const getAllDrivers = async () => {
-    try {
-      const response = await myaxios.get('/drivers/getDrivers');
-      return response.data;
-    } catch (error) {
-      console.error('Error fetching drivers:', error);
-      throw error;
-    }
+  export const getAllTrips = () => {
+    return  myaxios.get('/trips')
+      .then(response => response.data)
+      .catch(error => {
+        console.error('Error fetching trips:', error);
+        throw error;
+      });
   };
 
-// import { myaxios } from "./helper";
+  export const deleteTrip = (tripId) => {
+    return myaxios.delete(`/trips/${tripId}`)
+      .then(response => response.data)
+      .catch(error => {
+        console.error('Error deleting trip:', error);
+        throw error;
+      });
+  };
 
-// export const registration = (Admin) =>{
-//     return myaxios.post("/api/drivers/register").then((response)=>response.json());
-// };
-
-
-
-// import { myaxios } from "./helper";
-
-// // Define the service function for driver registration
-// export const registerDriver = (driverData) => {
-//     return myaxios.post("/api/drivers/register", driverData)
-//         .then(response => response.data) // Return the response data
-//         .catch(error => {
-//             console.error('Error registering driver:', error);
-//             throw error; // Re-throw the error to be handled by the caller
-//         });
-// };
+  export const updateTrip = (tripId, tripData) => {
+    return myaxios.put(`/trips/${tripId}`, tripData)
+      .then(response => response.data)
+      .catch(error => {
+        console.error('Error updating trip:', error);
+        throw error;
+      });
+  };
+  
+  
+  export const getAllVehicles = () => {
+    return  myaxios.get('/api/vehicles')
+      .then(response => response.data)
+      .catch(error => {
+        console.error('Error fetching vehicles:', error);
+        throw error;
+      });
+  };
+  
+  
