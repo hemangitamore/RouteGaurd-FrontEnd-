@@ -9,7 +9,7 @@
 // } from 'react-router-dom';
 // // All pages
 // import AdminLogin from './components/AdminLogin';
-// import SuperAdmin from './components/SuperAdmin';
+// //import SuperAdminLogin from '../components/SuperAdminLogin';
 
 
 // import Services from './components/Services';
@@ -25,6 +25,7 @@
 // import DriverDetails from './pages/DriverDetails'; 
 
 // import {useDocTitle} from './components/CustomHook';
+
 // import ScrollToTop from './components/ScrollToTop';
 // import AdminDashBoard from './pages/AdminDashBoard';
 // import VehiclesDashBoard from './pages/VehiclesDashBoard';
@@ -58,7 +59,7 @@
 //             <Route path="/get-demo" element={<DemoProduct />} /> 
 //             <Route path="/driver-details" element={<DriverDetails/>} /> 
 //             <Route path="/AdminLogin" element={<AdminLogin />} />
-//             <Route path="/SuperAdmin" element={<SuperAdmin/>} />
+     
             
             
 //             <Route path="/AdminDashBoard" element={<AdminDashBoard/>} />
@@ -68,7 +69,7 @@
 //             <Route path="/customer/register" element={<CustomerRegistration />} />
 //             <Route path="/service" element={< Services/>} />
 //             <Route exact={true} path="/driver/register" element={<DriverRegistration />} />
-//             <Route path="/superAdmin/login" element={<SuperAdmin />} />
+            
 //             <Route path="/admin/login" element={<AdminLogin />} />
             
 //           </Routes>
@@ -81,31 +82,40 @@
 
 // export default App;
 
+
+// // src/App.js
+
+
+// src/App.js
 import React, { useContext } from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import SuperAdminLogin from './components/SuperAdminLogin';
+import Dashboard from './components/Dashboard';
 import { AuthContext } from './contexts/AuthContext';
-import Home from './pages/Home';
 
-import AdminDashBoard from './pages/AdminDashBoard';
-import LoadingSpinner from './components/LoadingSpinner'; // Create this component
-import SuperAdmin from './components/SuperAdmin';
-
-const App = () => {
-  const { isAuthenticated, loading } = useContext(AuthContext);
-
-  if (loading) {
-    return <LoadingSpinner />; // Show loading spinner while authentication is being checked
-  }
+function App() {
+  const { isAuthenticated } = useContext(AuthContext);
 
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/SuperAdmin" element={!isAuthenticated ? <SuperAdmin/> : <Navigate to="/AdminDashBoard" />} />
-      <Route path="/AdminDashBoard" element={isAuthenticated ? <AdminDashBoard /> : <Navigate to="/login" />} />
-      {/* Add other routes here */}
-    </Routes>
+    <Router>
+      <Routes>
+        <Route
+          path="/login"
+          element={isAuthenticated ? <Navigate to="/dashboard" /> : <SuperAdminLogin />}
+        />
+        <Route
+          path="/dashboard"
+          element={isAuthenticated ? <Dashboard /> : <Navigate to="/login" />}
+        />
+        <Route
+          path="*"
+          element={<Navigate to={isAuthenticated ? "/dashboard" : "/login"} />}
+        />
+      </Routes>
+    </Router>
   );
-};
+}
 
 export default App;
+
 

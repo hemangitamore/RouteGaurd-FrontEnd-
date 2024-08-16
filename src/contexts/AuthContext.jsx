@@ -40,49 +40,38 @@
 //   );
 // };
 
-import React, { createContext, useState, useEffect } from 'react';
-import { jwtDecode } from 'jwt-decode'; // Named import
+// src/contexts/AuthContext.js
+
+// 
+
+// src/contexts/AuthContext.js
+// src/contexts/AuthContext.js
+import React, { createContext, useState } from 'react';
 
 export const AuthContext = createContext();
 
-export const AuthProvider = ({ children }) => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    // Check if there is a token in localStorage
-    const token = localStorage.getItem('jwtToken');
-    if (token) {
-      try {
-        // Decode token to verify authentication
-        const decodedToken = jwtDecode(token);
-        if (decodedToken.exp * 1000 > Date.now()) {
-          setIsAuthenticated(true);
-        } else {
-          localStorage.removeItem('jwtToken');
-        }
-      } catch (error) {
-        // Handle token decoding errors
-        localStorage.removeItem('jwtToken');
-      }
-    }
-    setLoading(false);
-  }, []);
+const AuthProvider = ({ children }) => {
+  const [isAuthenticated, setIsAuthenticated] = useState(!!localStorage.getItem('token'));
 
   const login = (token) => {
-    localStorage.setItem('jwtToken', token);
+    localStorage.setItem('token', token);
     setIsAuthenticated(true);
   };
 
   const logout = () => {
-    localStorage.removeItem('jwtToken');
+    localStorage.removeItem('token');
     setIsAuthenticated(false);
   };
 
+  const getToken = () => {
+    return localStorage.getItem('token');
+  };
+
   return (
-    <AuthContext.Provider value={{ isAuthenticated, loading, login, logout }}>
+    <AuthContext.Provider value={{ isAuthenticated, login, logout, getToken }}>
       {children}
     </AuthContext.Provider>
   );
 };
 
+export default AuthProvider;
